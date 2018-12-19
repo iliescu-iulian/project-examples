@@ -1,5 +1,5 @@
 node {
-    git url: 'https://github.com/JFrog/project-examples.git'
+    git url: 'https://github.com/iliescu-iulian/project-examples.git'
 
     // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
     def server = Artifactory.server SERVER_ID
@@ -11,11 +11,11 @@ node {
 
     // Read the upload spec and upload files to Artifactory.
     def downloadSpec = readFile 'jenkins-examples/pipeline-examples/resources/props-download.json'
-    def buildInfo2 = server.download spec: downloadSpec
+    //def buildInfo2 = server.download spec: downloadSpec
 
     // Merge the upload and download build-info objects.
-    buildInfo1.append buildInfo2
+    //buildInfo1.append buildInfo2
 
     // Publish the build to Artifactory
-    server.publishBuildInfo buildInfo1
+    //server.publishBuildInfo buildInfo1
 }
