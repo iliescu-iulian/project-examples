@@ -23,10 +23,10 @@ pipeline {
                     def buildInfo2 = server.upload spec: uploadSpec
 
                     // Merge the local download and upload build-info instances:
-                    buildInfo1.append buildInfo2
+                    //buildInfo1.append buildInfo2
 
                     // Publish the merged build-info to Artifactory
-                    server.publishBuildInfo buildInfo1
+                    //server.publishBuildInfo buildInfo1
                 }
             }
         }
